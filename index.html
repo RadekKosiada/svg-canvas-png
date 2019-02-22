@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SVG to Canvas to PNG to Download</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <div id="svg-container">
+          <svg class="svgIcon-use" width="400" height="500" viewBox="0 0 25 25"><path d="M12.5 21a.492.492 0 0 1-.327-.122c-.278-.24-.61-.517-.978-.826-2.99-2.5-7.995-6.684-7.995-10.565C3.2 6.462 5.578 4 8.5 4c1.55 0 3 .695 4 1.89a5.21 5.21 0 0 1 4-1.89c2.923 0 5.3 2.462 5.3 5.487 0 3.97-4.923 8.035-7.865 10.464-.42.35-.798.66-1.108.93a.503.503 0 0 1-.327.12zM8.428 4.866c-2.414 0-4.378 2.05-4.378 4.568 0 3.475 5.057 7.704 7.774 9.975.243.2.47.39.676.56.245-.21.52-.43.813-.68 2.856-2.36 7.637-6.31 7.637-9.87 0-2.52-1.964-4.57-4.377-4.57-1.466 0-2.828.76-3.644 2.04-.1.14-.26.23-.43.23-.18 0-.34-.09-.43-.24-.82-1.27-2.18-2.03-3.65-2.03z" fill-rule="evenodd"></path>
+          <text style="font-size: 2px; font-weight: bold;">Hello</text>
+          </svg>
+          </div>
+          
+          <canvas id="canvas" width="800" height="400"></canvas>
+          <div id="png-container"></div>
+        
+          <button id="download" onclick="showPopup()">Get PNG</button>
+        
+          <div id="overlay">
+            <div id="popup">
+                <p id="close-popup" onclick="hidePop()">&#x2715;</p>
+                <label for="name">Save the chart as:</label>
+                <input type="text" id="name" name="name" required
+                    minlength="4" maxlength="15" placeholder="enter name of the file" oninput="hideErrorMessage()">
+                <p id="error-message">Please make sure you entered a valid file name</p>
+                <div id="buttons">        
+                    
+                    <button id="download-png" onclick="getPngName()">PNG</button>
+                    
+                    <button id="download-cancel" onclick="hidePop()">Cancel</button>
+                </div>
+               
+            </div>
+        </div>
+
+    <script src="script.js" async defer></script>
+  </body>
+</html>
+
+
+  
